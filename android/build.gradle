@@ -2,7 +2,8 @@ group 'com.julow.environment_sensors'
 version '1.0-SNAPSHOT'
 
 buildscript {
-    ext.kotlin_version = '1.6.21'
+    ext.kotlin_version = '1.9.0'
+
     repositories {
         google()
         jcenter()
@@ -25,7 +26,7 @@ apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 
 android {
-    compileSdkVersion 30
+    compileSdkVersion 34
     namespace 'com.julow.environment_sensors'
 
     sourceSets {
@@ -33,6 +34,15 @@ android {
     }
     defaultConfig {
         minSdkVersion 16
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    kotlinOptions {
+        jvmTarget = '17'
     }
 }
 
